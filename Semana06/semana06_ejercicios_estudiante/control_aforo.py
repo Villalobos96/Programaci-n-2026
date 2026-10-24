@@ -1,7 +1,7 @@
 """Reto integrador: control de ingreso al Anfiteatro del CENAC.
 
-Nombre del estudiante: __________________________________________
-Fecha: ____________________
+Nombre del estudiante: Diego Villalobos Mendoza
+Fecha: 23/10/2026
 
 Contexto:
 Se analizará el ingreso de grupos a un evento en el Anfiteatro del CENAC, Costa Rica.
@@ -103,3 +103,39 @@ Otros casos para probar:
 
 
 # Desarrolle su solución a partir de esta línea.
+
+grupos_aceptados = []
+grupos_rechazados = []
+capacidad_maxima = 0
+
+entrada = input("Favor ingrese el grupo (o fin para terminar): ").strip().lower()
+
+while entrada != "fin":
+    try:
+        grupo = int(entrada) 
+        capacidad_maxima = capacidad_maxima + grupo # 650 + 60 = 710 
+        if capacidad_maxima <= 700: 
+            grupos_aceptados.append(grupo)
+            print("Grupo aceptado")
+        else:
+            grupos_rechazados.append(grupo)
+            capacidad_maxima = capacidad_maxima - grupo
+            print("Grupo rechazado")
+        print(f"Ocupación actual: {capacidad_maxima}")
+        print(f"Espacios disponibles: {700 - capacidad_maxima} \n")    
+    except ValueError:
+        grupo = -1
+    entrada = input("Favor ingrese el grupo (o fin para terminar): ").strip().lower()
+
+personas_admitidas = 0
+for grupos in grupos_aceptados:
+    personas_admitidas = personas_admitidas + grupos
+
+cantidad_aceptados = len(grupos_aceptados)
+
+print("REPORTE FINAL")
+print("-"*80,"\n")
+print(f"Grupos aceptados: {cantidad_aceptados}")
+print(grupos_aceptados)
+print(grupos_rechazados)
+print(personas_admitidas)
