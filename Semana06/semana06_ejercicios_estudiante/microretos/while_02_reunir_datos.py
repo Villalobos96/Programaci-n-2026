@@ -13,7 +13,7 @@ entrada = input("Resultado (o fin para terminar): ").strip().lower()
 while entrada != "fin":
     resultado = int(entrada)
     # TODO: agregue el resultado a la lista.
-    pass
+    resultados.append(resultado)
 
     entrada = input("Resultado (o fin para terminar): ").strip().lower()
 
@@ -30,3 +30,5 @@ else:
 # Resultados registrados: [80, 65, 90]
 # Cantidad de resultados: 3
 # Promedio: 78.33
+
+
