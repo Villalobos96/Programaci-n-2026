@@ -10,8 +10,17 @@ def sumar_esperas(minutos):
 
     for minuto in minutos:
         # TODO: acumule cada minuto en total.
-        pass
+        total += minuto
+    
+    horas = total / 60
+    
 
-    return total
+
+    return horas
+
+resultado = sumar_esperas(ESPERAS)
+
+print("El tiempo total en horas: ", resultado)
+
 
 #TODO: llame a la función sumar_esperas y guarde el resultado en una variable. Luego, imprima el resultado en horas.
