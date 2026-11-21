@@ -16,7 +16,7 @@ def sumar_esperas(minutos):
     
 
     return horas
-    return total
+    
 
 resultado = sumar_esperas(ESPERAS)
 print("El tiempo total en horas: ", resultado)
